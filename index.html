@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KRAAL — Bijoux en Perles · Lomé, Togo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  ✦ Bijoux en perles artisanaux · Commandez via <b>WhatsApp</b> · Livraison Partout ✦
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      KR<span>A</span>AL
+      <small>Bijoux en Perles · Lomé</small>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="scroll2('#collection')">Collection</a></li>
+      <li><a onclick="scroll2('#apropos')">À propos</a></li>
+      <li><a onclick="scroll2('#commande')">Commander</a></li>
+      <li><a onclick="scroll2('#temoignages')">Avis</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn" onclick="toggleDrawer()" title="Mon panier">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <div class="cart-badge" id="cartBadge">0</div>
+      </button>
+      <button class="hamburger" id="hbg" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <a onclick="scroll2('#collection');toggleMob()">Collection</a>
+    <a onclick="scroll2('#apropos');toggleMob()">Notre histoire</a>
+    <a onclick="scroll2('#commande');toggleMob()">Comment commander</a>
+    <a onclick="scroll2('#temoignages');toggleMob()">Avis clients</a>
+    <a href="https://wa.me/22891239687?text=Bonjour%20KRAAL%2C%20je%20voudrais%20commander." target="_blank" style="color:#25D366;font-weight:600;">📱 Commander sur WhatsApp</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-orbs">
+    <div class="hero-orb hero-orb1"></div>
+    <div class="hero-orb hero-orb2"></div>
+    <div class="hero-orb hero-orb3"></div>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Collection Artisanale 2026</div>
+      <h1>L'art des perles,<br>une <em>élégance</em><br>intemporelle</h1>
+      <p class="hero-desc">Chaque bijou KRAAL est une œuvre unique, façonnée à la main avec des perles soigneusement sélectionnées. Bracelets, colliers, boucles d'oreilles — portez votre histoire.</p>
+      <div class="hero-ctas">
+        <button class="btn-gold" onclick="scroll2('#collection')">Voir la collection</button>
+        <a class="btn-ghost" href="https://wa.me/22891239687?text=Bonjour%20KRAAL%2C%20je%20souhaite%20commander%20un%20bijou." target="_blank">Commander sur WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">500+</div><div class="stat-label">Bijoux créés</div></div>
+        <div><div class="stat-val">100%</div><div class="stat-label">Fait main</div></div>
+        <div><div class="stat-val">3j</div><div class="stat-label">Livraison Lomé</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card" onclick="filterCat('bracelets',null);scroll2('#collection')">
+        <div class="hero-card-big-icon">📿</div>
+        <div>
+          <div class="hero-card-featured-title">Bracelets Signature</div>
+          <div class="hero-card-featured-sub">Perles naturelles, verre de Murano<br>& perles africaines</div>
+          <div class="hero-card-price">dès 3 500 F</div>
+        </div>
+      </div>
+      <div class="hero-card" onclick="filterCat('colliers',null);scroll2('#collection')">
+        <div class="hero-card-icon">💍</div>
+        <div class="hero-card-title">Colliers</div>
+        <div class="hero-card-sub">Pièces uniques</div>
+      </div>
+      <div class="hero-card" onclick="filterCat('boucles',null);scroll2('#collection')">
+        <div class="hero-card-icon">✨</div>
+        <div class="hero-card-title">Boucles</div>
+        <div class="hero-card-sub">Légères & élégantes</div>
+      </div>
+      <div class="hero-card" onclick="filterCat('ensembles',null);scroll2('#collection')">
+        <div class="hero-card-icon">🎁</div>
+        <div class="hero-card-title">Ensembles</div>
+        <div class="hero-card-sub">Parures complètes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="section" id="collection" style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-center">
+      <div class="sec-eye">Nos créations</div>
+      <h2 class="sec-title">La <em>Collection</em> KRAAL</h2>
+      <p class="sec-sub">Des bijoux artisanaux uniques, chaque pièce est fabriquée à la main avec passion</p>
+    </div>
+    <div class="pills" id="pills">
+      <button class="pill active" onclick="filterCat('all',this)">Tout voir</button>
+      <button class="pill" onclick="filterCat('bracelets',this)">📿 Bracelets</button>
+      <button class="pill" onclick="filterCat('colliers',this)">💍 Colliers</button>
+      <button class="pill" onclick="filterCat('boucles',this)">✨ Boucles d'oreilles</button>
+      <button class="pill" onclick="filterCat('ensembles',this)">🎁 Ensembles</button>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="apropos" style="background:white">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-vis">
+        <div class="about-main-img">📿</div>
+        <div class="about-float">
+          <div class="about-float-num">100%</div>
+          <div class="about-float-txt">Artisanal<br>Fait main · Lomé</div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-eye">Notre histoire</div>
+        <h2 class="sec-title">KRAAL, l'âme des <em>perles</em> africaines</h2>
+        <p style="color:var(--text2);font-size:15px;line-height:1.85;margin:20px 0;">KRAAL est né d'une passion profonde pour l'artisanat africain et la beauté des perles. Chaque bijou raconte une histoire celle des mains qui l'ont créé, des perles soigneusement choisies et de l'amour du travail bien fait.</p>
+        <p style="color:var(--text2);font-size:15px;line-height:1.85;margin-bottom:34px;">Basés à Lomé, nous créons des bijoux qui traversent le temps. Des pièces uniques, impossibles à trouver ailleurs, qui deviennent des trésors transmis de génération en génération.</p>
+        <div class="about-feats">
+          <div class="about-feat"><div class="about-feat-ico">🌿</div><div><div class="about-feat-ttl">Matériaux naturels</div><div class="about-feat-dsc">Perles naturelles, verre soufflé, cristaux et perles africaines authentiques</div></div></div>
+          <div class="about-feat"><div class="about-feat-ico">👐</div><div><div class="about-feat-ttl">100% fait main</div><div class="about-feat-dsc">Chaque bijou est unique, créé à la main avec soin et précision</div></div></div>
+          <div class="about-feat"><div class="about-feat-ico">📦</div><div><div class="about-feat-ttl">Livraison rapide</div><div class="about-feat-dsc">Nous livrons partout, emballage cadeau inclus</div></div></div>
+          <div class="about-feat"><div class="about-feat-ico">🎨</div><div><div class="about-feat-ttl">Sur commande</div><div class="about-feat-dsc">Bijoux personnalisés aux couleurs et préférences du client</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="section bg-navy" id="commande">
+  <div class="container">
+    <div class="sec-center bg-navy">
+      <div class="sec-eye">Simple & rapide</div>
+      <h2 class="sec-title">Comment <em>commander</em> ?</h2>
+      <p class="sec-sub">4 étapes simples pour recevoir votre bijou KRAAL</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num" data-n="1">🔍</div>
+        <div class="step-title">Choisissez</div>
+        <div class="step-desc">Parcourez notre collection et sélectionnez votre bijou favori</div>
+      </div>
+      <div class="step">
+        <div class="step-num" data-n="2">📱</div>
+        <div class="step-title">Cliquez Commander</div>
+        <div class="step-desc">Appuyez sur "Commander" WhatsApp s'ouvre automatiquement</div>
+      </div>
+      <div class="step">
+        <div class="step-num" data-n="3">💬</div>
+        <div class="step-title">Confirmez</div>
+        <div class="step-desc">Échangez avec nous pour confirmer les détails et le paiement</div>
+      </div>
+      <div class="step">
+        <div class="step-num" data-n="4">🎁</div>
+        <div class="step-title">Recevez</div>
+        <div class="step-desc">Votre bijou arrive chez vous une fois vous confirmez votre commande, emballage cadeau inclus</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px">
+      <a class="wa-big-btn" href="https://wa.me/22891239687?text=Bonjour%20KRAAL%20!%20Je%20voudrais%20passer%20une%20commande." target="_blank">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Commander via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="section bg-pearl" id="temoignages">
+  <div class="container">
+    <div class="sec-center">
+      <div class="sec-eye">Ce qu'ils disent</div>
+      <h2 class="sec-title">Nos <em>clientes</em> adorent KRAAL</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-txt">"Le bracelet que j'ai commandé est absolument magnifique. La qualité est incroyable et l'emballage cadeau était parfait pour offrir. Je recommande vivement !"</p>
+        <div class="testi-author"><div class="testi-av">AK</div><div><div class="testi-name">Ama Koffi</div><div class="testi-loc">Lomé · Cliente fidèle</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-txt">"J'ai commandé une parure complète pour mon mariage. Chaque perle était parfaitement assortie, les bijoux étaient exactement comme je les avais imaginés. Merci KRAAL !"</p>
+        <div class="testi-author"><div class="testi-av">EY</div><div><div class="testi-name">Essi Yao</div><div class="testi-loc">Lomé · Mariée 2025</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-txt">"La commande sur WhatsApp est très simple. La réponse est rapide, la livraison ponctuelle. Je commande régulièrement pour offrir des cadeaux à mes amies."</p>
+        <div class="testi-author"><div class="testi-av">KM</div><div><div class="testi-name">Kofi Mensah</div><div class="testi-loc">Lomé · Client régulier</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Bijou personnalisé ?<br><em>Dites-nous vos couleurs</em></h2>
+  <p>Nous créons des bijoux sur mesure selon vos préférences. Contactez-nous sur WhatsApp !</p>
+  <a class="wa-big-btn" href="https://wa.me/22891239687?text=Bonjour%20KRAAL%20!%20Je%20voudrais%20un%20bijou%20personnalis%C3%A9." target="_blank">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Bijou sur mesure
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">KR<span>A</span>AL<small>Bijoux en Perles</small></div>
+        <p class="footer-desc">Bijoux artisanaux en perles, créés à la main à Lomé. Chaque pièce est unique et raconte une histoire africaine.</p>
+        <a href="https://wa.me/22891239687" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:11px 22px;border-radius:3px;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.5px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          +228 91 23 96 87
+        </a>
+      </div>
+      <div>
+        <div class="footer-col-title">Collection</div>
+        <ul class="footer-links">
+          <li><a onclick="filterCat('bracelets',null)">Bracelets</a></li>
+          <li><a onclick="filterCat('colliers',null)">Colliers</a></li>
+          <li><a onclick="filterCat('boucles',null)">Boucles d'oreilles</a></li>
+          <li><a onclick="filterCat('ensembles',null)">Parures & Ensembles</a></li>
+          <li><a href="https://wa.me/22891239687?text=Bijou%20sur%20mesure" target="_blank">Sur mesure</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Info</div>
+        <ul class="footer-links">
+          <li><a onclick="scroll2('#apropos')">Notre histoire</a></li>
+          <li><a onclick="scroll2('#commande')">Comment commander</a></li>
+          <li><a onclick="scroll2('#temoignages')">Avis clients</a></li>
+          <li><a href="https://wa.me/22891239687" target="_blank">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a>📍 Lomé, Togo</a></li>
+          <li><a href="https://wa.me/22891239687" target="_blank">📱 +228 91 23 96 87</a></li>
+          <li><a>🕐 Lun–Sam : 8h–20h</a></li>
+          <li><a>📦 Livraison partout</a></li>
+          <li><a>🎁 Emballage cadeau inclus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 KRAAL — Bijoux en Perles. Tous droits réservés.</span>
+      <span style="color:rgba(255,255,255,.25)">Made by
+        <a style="text-decoration: none; color: white;" href="https://technet-solutions.up.railway.app/">TECHNET SOLUTIONS</a> | Lomé, Togo</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Overlay + Drawer -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div class="drawer-head-title">Mon Panier</div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div id="drawerFoot"></div>
+</div>
+
+<!-- Float WA -->
+<a class="wa-float" href="https://wa.me/22891239687?text=Bonjour%20KRAAL%20!%20Je%20voudrais%20commander%20un%20bijou." target="_blank" title="Commander sur WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
