@@ -105,12 +105,35 @@ function updateCart() {
     </div>`;
 }
 
+// function orderWA() {
+//   let msg = '📿 *Commande KRAAL*\n\n';
+//   cart.forEach(x => { msg += `${x.emoji} *${x.name}* × ${x.qty} — ${(x.price * x.qty).toLocaleString('fr-FR')} FCFA\n` });
+//   const s = cart.reduce((t, x) => t + x.price * x.qty, 0);
+//   msg += `\n💰 *Total : ${s.toLocaleString('fr-FR')} FCFA*\n\nBonjour KRAAL ! Je souhaite passer cette commande. Merci !`;
+//   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+// }
+
 function orderWA() {
   let msg = '📿 *Commande KRAAL*\n\n';
-  cart.forEach(x => { msg += `${x.emoji} *${x.name}* × ${x.qty} — ${(x.price * x.qty).toLocaleString('fr-FR')} FCFA\n` });
+  cart.forEach(x => {
+    msg += `${x.emoji} *${x.name}* × ${x.qty} — ${(x.price * x.qty).toLocaleString('fr-FR')} FCFA\n`
+  });
+
   const s = cart.reduce((t, x) => t + x.price * x.qty, 0);
   msg += `\n💰 *Total : ${s.toLocaleString('fr-FR')} FCFA*\n\nBonjour KRAAL ! Je souhaite passer cette commande. Merci !`;
+
+  // 👉 Ouvre WhatsApp
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+
+  // ✅ VIDER LE PANIER
+  cart = [];
+  updateCart();
+
+  // ✅ feedback utilisateur
+  showToast('✅ Commande envoyée, panier vidé !');
+
+  // (optionnel) fermer le drawer
+  closeDrawer();
 }
 
 function toggleDrawer() {
