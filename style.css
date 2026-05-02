@@ -635,6 +635,19 @@ nav {
   gap: 28px
 }
 
+.prod-img-tag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.prod-img {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
 .prod-card {
   background: white;
   border-radius: 12px;

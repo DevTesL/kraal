@@ -3,16 +3,213 @@ const WA_SVG = `<svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.
 
 const products = [
   // BRACELETS
-  { id: 1, name: 'Bracelet Sahel', cat: 'bracelets', catLbl: 'Bracelet', emoji: '📿', price: 3500, desc: 'Perles de verre africain aux couleurs chaudes, élastique doré', badge: 'hot', bg: 'linear-gradient(135deg,#5a2d0c,#a06030)' },
-  { id: 2, name: 'Bracelet Mer Bleue', cat: 'bracelets', catLbl: 'Bracelet', emoji: '💙', price: 4500, desc: 'Perles de turquoise et cristaux, fermoir argent', badge: 'new', bg: 'linear-gradient(135deg,#0a2a5a,#1a5080)' },
-  { id: 3, name: 'Bracelet Perles d\'Ivoire', cat: 'bracelets', catLbl: 'Bracelet', emoji: '🤍', price: 5000, desc: 'Perles d\'os naturel poli, fil tressé doré', badge: null, bg: 'linear-gradient(135deg,#5a4a30,#8a7050)' },
-  { id: 4, name: 'Bracelet Étoile Dorée', cat: 'bracelets', catLbl: 'Bracelet', emoji: '⭐', price: 6000, desc: 'Perles dorées et cristaux Swarovski, pièce unique', badge: 'excl', bg: 'linear-gradient(135deg,#3a2a00,#7a5a00)' },
-  { id: 5, name: 'Bracelet Grenat Rouge', cat: 'bracelets', catLbl: 'Bracelet', emoji: '❤️', price: 4000, desc: 'Perles de grenat naturel, symbolise la passion', badge: null, bg: 'linear-gradient(135deg,#5a0a0a,#900000)' },
+  {
+    id: 1,
+    name: 'Bracelet Personnalisé en Bronze',
+    cat: 'bracelets',
+    catLbl: 'Bracelet',
+    // emoji: '📿',
+    image: 'img/bracelets/bracelet1.jpeg',
+    price: 5000,
+    desc: "Bracelet en bronze personnalisé, associé à des pierres de volcan." + " NB : Gravure au choix",
+    badge: 'hot',
+    bg: 'linear-gradient(135deg,#5a2d0c,#a06030)'
+  },
+
+  {
+    id: 2,
+    name: 'Bracelet Personnalisé en Bronze',
+    cat: 'bracelets',
+    catLbl: 'Bracelet', 
+    // emoji: '💙', 
+    image: 'img/bracelets/bracelet2.jpeg',
+    price: 6500, 
+    desc: "Bracelet en bronze personnalisé, associé à des pierres œil de tigre. NB : Gravure au choix", 
+    badge: 'new', 
+    bg: 'linear-gradient(135deg,#0a2a5a,#1a5080)'
+  },
+
+  { id: 3, 
+    name: 'Bracelet Oeil de tigre', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '🤍', 
+    image: 'img/bracelets/bracelet3.jpeg',
+    price: 4000, 
+    desc: 'Élégance naturelle et énergie puissante réunies dans un bracelet œil de tigre.', 
+    badge: 'new', 
+    bg: 'linear-gradient(135deg,#5a4a30,#8a7050)' 
+  },
+  
+  { id: 4, 
+    name: 'Bracelet Perle Aurore', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '⭐', 
+    image: 'img/bracelets/bracelet4.jpeg',
+    price: 1500,
+    desc: 'Perles dorées et cristaux, pièce phare de notre collection, parfaite pour les occasions spéciales', 
+    badge: 'excl', 
+    bg: 'linear-gradient(135deg,#3a2a00,#7a5a00)' 
+  },
+  
+  { id: 5, 
+    name: 'Bracelet Flamme Rosée', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet5.jpeg',
+    price: 1500, 
+    desc: 'Perles de grenat naturel, symbolise la passion', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 6, 
+    name: 'Bracelet Aurore Miel', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet6.jpeg',
+    price: 1500, 
+    desc: 'Perles de cornaline naturelle, symbolise la vitalité et la créativité', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 7, 
+    name: 'Bracelet matt', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet7.jpeg',
+    price: 2500, 
+    desc: 'Perles de lave naturelle, parfait pour les amateurs de bijoux bruts et authentiques', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 8, 
+    name: 'Bracelet matt couronne', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet8.jpeg',
+    price: 2500, 
+    desc: 'Perles de lave naturelle, parfait pour les amateurs de bijoux bruts et authentiques', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 9, 
+    name: 'Bracelet au pierre naturel', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet9.jpeg',
+    price: 1000, 
+    desc: 'Perles de cristal naturel, parfait pour les amateurs de bijoux bruts et authentiques', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 10, 
+    name: 'Bracelet en coris', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet10.jpeg',
+    price: 1500, 
+    desc: 'Bracelet en coris, symbolise la protection et la connexion à la mer, parfait pour les amateurs de bijoux bruts et authentiques', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
+  { id: 11, 
+    name: 'Bracelet en acier inoxidable', 
+    cat: 'bracelets', 
+    catLbl: 'Bracelet', 
+    // emoji: '❤️', 
+    image: 'img/bracelets/bracelet11.jpeg',
+    price: 7000, 
+    desc: 'Bracelet en acier inoxidable, parfait pour les amateurs de bijoux bruts et authentiques', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#5a0a0a,#900000)' 
+  },
+
   // COLLIERS
-  { id: 6, name: 'Collier Reine du Nil', cat: 'colliers', catLbl: 'Collier', emoji: '👑', price: 12000, desc: 'Perles de turquoise & lapis-lazuli, inspiré de l\'Afrique antique', badge: 'excl', bg: 'linear-gradient(135deg,#001a3a,#003a6a)' },
-  { id: 7, name: 'Collier Soleil Togolais', cat: 'colliers', catLbl: 'Collier', emoji: '🌟', price: 9500, desc: 'Perles dorées et orange, ode aux couleurs du Togo', badge: 'hot', bg: 'linear-gradient(135deg,#5a2a00,#c06000)' },
-  { id: 8, name: 'Collier Cascade Ivoire', cat: 'colliers', catLbl: 'Collier', emoji: '🤍', price: 8000, desc: 'Long collier multi-rangs en perles blanches naturelles', badge: 'new', bg: 'linear-gradient(135deg,#3a3020,#7a6a50)' },
-  { id: 9, name: 'Collier Ethnique Kente', cat: 'colliers', catLbl: 'Collier', emoji: '🎨', price: 7500, desc: 'Perles multicolores inspirées du tissu kente traditionnel', badge: null, bg: 'linear-gradient(135deg,#2a1a00,#6a4000)' },
+  { id: 6, 
+    name: 'Collier au pierre naturelle', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '👑',
+    image: 'img/colliers/collier1.jpeg',
+    price: 3000,
+    desc: 'Collier en pierres naturelles, allie beauté brute et énergie positive', 
+    badge: 'excl', 
+    bg: 'linear-gradient(135deg,#001a3a,#003a6a)' 
+  },
+  
+  { id: 7, 
+    name: 'Collier Soleil Togolais', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '🌟',
+    image: 'img/colliers/collier2.jpeg',
+    price: 4000,
+    desc: 'Perles dorées et orange, ode aux couleurs du Togo', 
+    badge: 'hot', 
+    bg: 'linear-gradient(135deg,#5a2a00,#c06000)' 
+  },
+  
+  { id: 8, 
+    name: 'Collier Cascade Ivoire', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '🤍',
+    image: 'img/colliers/collier3.jpeg',
+    price: 3000,
+    desc: 'Long collier multi-rangs en perles blanches naturelles', 
+    badge: 'new', 
+    bg: 'linear-gradient(135deg,#3a3020,#7a6a50)' 
+  },
+  
+  { id: 9, 
+    name: 'Collier Ethnique Kente', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '🎨',
+    image: 'img/colliers/collier4.jpeg',
+    price: 5000,
+    desc: 'Perles multicolores inspirées du tissu kente traditionnel', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#2a1a00,#6a4000)' 
+  },
+
+  { id: 10, 
+    name: 'Collier Ethnique Kente', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '🎨',
+    image: 'img/colliers/collier5.jpeg',
+    price: 2000,
+    desc: 'Perles multicolores inspirées du tissu kente traditionnel', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#2a1a00,#6a4000)' 
+  },
+
+  { id: 11, 
+    name: 'Collier Ethnique Kente', 
+    cat: 'colliers', 
+    catLbl: 'Collier', 
+    // emoji: '🎨',
+    image: 'img/colliers/collier7.jpeg',
+    price: 2000,
+    desc: 'Perles multicolores inspirées du tissu kente traditionnel', 
+    badge: null, 
+    bg: 'linear-gradient(135deg,#2a1a00,#6a4000)' 
+  },
+
   // BOUCLES
   { id: 10, name: 'Boucles Gouttes d\'Or', cat: 'boucles', catLbl: "Boucles d'oreilles", emoji: '✨', price: 4500, desc: 'Perles dorées en gouttelettes, légères et élégantes', badge: 'hot', bg: 'linear-gradient(135deg,#3a2a00,#8a6010)' },
   { id: 11, name: 'Boucles Cercles Bleus', cat: 'boucles', catLbl: "Boucles d'oreilles", emoji: '💙', price: 3800, desc: 'Cerceaux ornés de perles bleues, style bohème chic', badge: null, bg: 'linear-gradient(135deg,#0a1a3a,#1a3a6a)' },
@@ -36,7 +233,7 @@ function renderProducts(list) {
   document.getElementById('prodGrid').innerHTML = list.map(p => `
     <div class="prod-card">
       <div class="prod-img" style="background:${p.bg}">
-        ${p.emoji}
+        <img src="${p.image}" alt="${p.name}" class="prod-img-tag">
         ${badgeHTML(p.badge)}
       </div>
       <div class="prod-body">
@@ -114,7 +311,7 @@ function updateCart() {
 // }
 
 function orderWA() {
-  let msg = '📿 *Commande KRAAL*\n\n';
+  let msg = '📿 *Nouvelle Commande KRAAL*\n\n';
   cart.forEach(x => {
     msg += `${x.emoji} *${x.name}* × ${x.qty} — ${(x.price * x.qty).toLocaleString('fr-FR')} FCFA\n`
   });
