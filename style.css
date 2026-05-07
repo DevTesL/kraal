@@ -802,7 +802,7 @@ nav {
   background: linear-gradient(145deg, var(--navy2), var(--navy3));
   border-radius: 16px;
   height: 460px;
-  display: flex;
+  display: flex;  
   align-items: center;
   justify-content: center;
   font-size: 100px;
